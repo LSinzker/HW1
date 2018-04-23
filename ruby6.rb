@@ -17,4 +17,15 @@ end
 
 # >> 1.dollar.in(:rupees)  ==> 1.dollar = self // :rupees = dst_currency
 
+class String
+  def palindrome?
+    self.downcase.gsub(/\W+/, '') == self.downcase.reverse.gsub(/\W+/, '')
+  end
+end
+
+module Enumerable
+  def palindrome?
+    self == self.reverse
+  end
+end
 
